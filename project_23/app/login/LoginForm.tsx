@@ -1,89 +1,29 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import '../globals.css';
+import FloatingLabelInput from './FloatingLabelInput';
+import Checkbox from './Checkbox';
 // import Image from "next/image";
 
 export default function LoginForm() {
   return (
-    <div className='flex container mx-auto flex-row justify-between'>
-      <div>Image</div>
-      <div className='flex flex-col justify-between rounded-r-3xl md bg-slate-300'>
-        <h3 className='block text-center font-serif font-semibold'>Project-23 login</h3>
-        <form>
-          <div className='relative'>
-            <label htmlFor='login' className='
-              text-sm
-              text-gray-500
-              dark:text-gray-400
-              duration-300
-              transform
-              -translate-y-4
-              scale-75
-              top-2
-              z-10
-              origin-[0]
-              bg-white
-              dark:bg-gray-900
-              px-2
-              peer-focus:px-2
-              peer-focus:text-blue-600
-              peer-placeholder-shown:-translate-y-1/2
-              peer-placeholder-shown:top-1/2
-              peer-focus:-translate-y-4
-              rtl:peer-focus:translate-x-1/4
-              rtl:peer-focus:left-auto
-              start-1'
-            >
-              Login
-            </label>
-            <input
-              type='text'
-              id='login'
-              className='block border-solid border-black rounded-md m-2 p-2'
-              placeholder=' '/>
+    <div className='flex w-fit px-auto max-w-screen-xs shadow-xl rounded-3xl md:max-w-screen-xl md:flex-row'>
+      <img alt='Sign in' src='/waterfall.jpg' className='w-auto h-auto max-w-40 shrink object-cover max-sm:hidden md:rounded-l-3xl' />
+      <div className='flex flex-col align-middle justify-center max-sm:rounded-3xl md:rounded-r-3xl bg-white shadow-md px-5'>
+        <h3 className='block text-xs text-center mb-5 font-semibold py-15 max-h-8 md:max-h-fit'>Project-23 Sign In</h3>
+        <form className='flex flex-col max-h-56'>
+          <FloatingLabelInput id='name' type='text' label='Login' />
+          <FloatingLabelInput id='password' type='password' label='Password' />
+          <div className='flex flex-col md:flex-row justify-between md:max-h-fit'>
+            <div className='flex flex-row max-h-6 mb-2 mr-2'>
+            <Checkbox />
+            <div className='flex-shrink text-xs font-semibold text-gray-500 pt-1 ml-2'>Remember me</div>
+            </div>
+            <a href='' className='flex-shrink text-xs text-blue-500 font-semibold pt-1 mr-2'>Forgot password?</a>
           </div>
-          <div className='relative'>
-            <label htmlFor='password' className='
-              text-sm
-              text-gray-500
-              dark:text-gray-400
-              duration-300
-              transform
-              -translate-y-4
-              scale-75
-              top-2
-              z-10
-              origin-[0]
-              bg-white
-              dark:bg-gray-900
-              px-2
-              peer-focus:px-2
-              peer-focus:text-blue-600
-              peer-placeholder-shown:-translate-y-1/2
-              peer-placeholder-shown:top-1/2
-              peer-focus:-translate-y-4
-              rtl:peer-focus:translate-x-1/4
-              rtl:peer-focus:left-auto
-              start-1'
-            >
-              Password
-            </label>
-            <input
-              type='text'
-              id='password'
-              className='
-                block
-                border-solid
-                rounded-md
-                border-black
-                m-2
-                p-2'
-              placeholder=' '/>
-          </div>
-          <div>
-            <select></select>
-            <a></a>
-          </div>
-          <button type='submit' className='block mx-auto my-2 rounded bg-blue-500 px-5'>Sign In</button>
+          <button type='submit' className='block w-full my-5 py-1 text-xs md:text-sm text-white rounded-md bg-blue-500 max-sm:max-h-6'>Sign In</button>
+          <hr className='border-solid border-gray-300' />
+          <button type='submit' className='block w-full my-5 py-1 text-xs md:text-sm text-white rounded-md bg-gray-950 max-sm:max-h-6'>or sign in with Google</button>
         </form>
       </div>
     </div>
